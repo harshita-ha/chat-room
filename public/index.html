@@ -3,20 +3,24 @@
 
 <head>
     <title>Chat App</title>
-    <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.min.css" type="text/css">
     <link rel="icon" href="/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="centered-form">
         <div class="centered-form__box">
-            <h1>Join</h1>
+            <h1 class="centered-form-text">Join</h1>
             <form action="/chat.html">
-                <label>Display name</label>
+                <label class="centered-form-text">Display name</label>
                 <input type="text" name="username" placeholder="Display name" required>
-                <label>Room</label>
+                <label class="centered-form-text">Room</label>
                 <input type="text" name="room" placeholder="Room" required>
-                <button>Join</button>
+                <button id="btn">Join</button>
             </form>
 
         </div>

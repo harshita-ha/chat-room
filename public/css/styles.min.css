@@ -5,7 +5,7 @@
 }
 
 html {
-    font-size: 16px
+    font-size: 16px;
 }
 
 input {
@@ -15,18 +15,28 @@ input {
 body {
     line-height: 1.4;
     color: #333;
-    font-family: Helvetica, Arial, sans-serif
+    font-family: 'Cinzel', serif;
 }
 
 h1 {
-    margin-bottom: 16px
+    margin-bottom: 16px;
+    font-size: 50px;
+    color: #f8f8f8;
+    font-weight: 2900;
+}
+
+.centered-form-text:hover {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
 }
 
 label {
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 8px;
-    color: #777
+    color: #f8f8f8;
+    font-weight: bold
 }
 
 input {
@@ -51,11 +61,16 @@ button:hover {
 
 button:disabled {
     cursor: default;
-    background: #7c5cbf94
+    background: #edecf094
 }
 
 .centered-form {
-    background: #333744;
+    background: url('../img/background-imgg.jpg') no-repeat center center fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100vw 100vh;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -65,9 +80,9 @@ button:disabled {
 
 .centered-form__box {
     box-shadow: 0 0 17px 1px #1D1F26;
-    background: #F7F7FA;
+    background: rgba(195, 199, 193, 0.4);
     padding: 24px;
-    width: 250px
+    width: 250px;
 }
 
 .centered-form button {
@@ -86,12 +101,14 @@ button:disabled {
 .chat__sidebar {
     height: 100vh;
     color: #fff;
-    background: #333744;
+    background-color: #FFDEE9;
     width: 225px;
     overflow-y: scroll
 }
 
 .chat__main {
+    background: url('../img/chat-bkg.png') no-repeat;
+    background-position: center;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -166,4 +183,53 @@ button:disabled {
     list-style-type: none;
     font-weight: 300;
     padding: 12px 24px 0
+}
+
+#btn {
+    background: #222;
+    height: 50px;
+    min-width: 150px;
+    border: none;
+    border-radius: 10px;
+    color: #eee;
+    font-size: 20px;
+    font-family: 'Cinzel', serif;
+    position: relative;
+    transition: 1s;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+#btn #circle {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    overflow: hidden;
+    transition: 500ms;
+}
+
+#btn:hover {
+    background: transparent;
+}
+
+#btn:hover #circle {
+    height: 50px;
+    width: 150px;
+    left: 0;
+    border-radius: 0;
+    border-bottom: 2px solid #eee;
+}
+
+::placeholder {
+    color: rgb(184, 179, 175);
+    font-size: 13px;
+    font-family: serif;
 }
