@@ -40,9 +40,10 @@ io.on('connection', (socket) => {
     })
 
     socket.on('sendMessage', (message, callback) => {
-        const user = getUser(socket.id);
-
-        io.to(user.room).emit('message', generateMessage({ message, username: user.username }));
+        if (message.length) {
+            const user = getUser(socket.id);
+            io.to(user.room).emit('message', generateMessage({ message, username: user.username }));
+        }
         callback();
     });
 

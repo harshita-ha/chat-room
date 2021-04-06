@@ -48,18 +48,21 @@ $messageForm.addEventListener('submit', (e) => {
     $messageButton.setAttribute('disabled', 'disabled');
 
     const message = e.target.elements.message.value;
-    socket.emit('sendMessage', message, (error) => {
-        if (error) {
-            return console.log(error);
-        }
 
-        $messageInput.value = '';
-        $messageInput.focus();
+    if (message.length) {
+        socket.emit('sendMessage', message, (error) => {
+            if (error) {
+                return console.log(error);
+            }
 
-        console.log('Message sent!');
-        $messageButton.removeAttribute('disabled');
-    });
-})
+            $messageInput.value = '';
+            $messageInput.focus();
+
+            console.log('Message sent!');
+        });
+    }
+    $messageButton.removeAttribute('disabled');
+});
 
 $locationButton.addEventListener('click', (e) => {
 
